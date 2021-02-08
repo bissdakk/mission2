@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hr-web-app
+spec:
+  selector:
+    matchLabels:
+      app: hr-web-app
+  replicas: 2
+  template: 
+    metadata:
+      labels:
+        app: hr-web-app
+    spec:
+      containers:
+      - name: hr-web-app
+        image: httpd:alpine
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: hr-web-app
+spec:
+  selector:
+    app: hr-web-app
+  ports:
+    - name: hrwebport
+      port: 80
+      nodePort: 30082
+  type: NodePort

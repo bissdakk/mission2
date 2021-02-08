@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: messaging-service
+spec:
+  selector:
+    tier: msg
+  ports:
+    - name: redisport
+      port: 6379
+  type: ClusterIP 
