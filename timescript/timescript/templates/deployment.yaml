@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timescript
+  labels:
+    app: timescript
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timescript
+  template:
+    metadata:
+      labels:
+        app: timescript
+    spec:
+      containers:
+      - name: timescript
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["/scripts-dir/run.sh"]
+        volumeMounts:
+        - name: scripts-vol
+          mountPath: /scripts-dir
+      volumes:
+      - name: scripts-vol
+        configMap:
+          name: scripts-configmap

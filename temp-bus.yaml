@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: temp-bus
+  namespace: finance
+  labels:
+    app: redis-pod
+spec:
+  containers:
+    - name: redis-pod
+      image: redis:alpine
+      ports:
+        - containerPort: 6379
+      
