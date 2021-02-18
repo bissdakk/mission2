@@ -1,4 +1,5 @@
 ## Mission 2: Kubernetes Lab
+This is a technical exam for payment provider in ph. 
 
 Setup a development kubernetes environment using [minikube](https://minikube.sigs.k8s.io/docs/start/) in your local machine or VM.
 
@@ -25,8 +26,3 @@ Execute the listed instructions and save all the yaml/json files in a directory.
 
 ### Description
 
-Publish your source code in a private GitHub repository.
-
-Please make sure that your repository is private.
-
-Invite the user `placeholder` as a collaborator to your repository.
